@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import Header from './components/Header';
+import BlogItem from './components/BlogItem';
 
-function App() {
+const App = () => {
+  const [blogs, setBlogs] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:8000/posts`)
+    .then(res => {
+      if(!res.ok) {
+        throw Error('Could not fetch the data.')
+      }
+      return res.json();
+    })
+    .then(data => {
+      setBlogs(data);
+      setIsLoading(false);
+      setError(null);
+    })
+    .catch(err => {
+      setError(err.message);
+      setIsLoading(false);
+    })
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {error && <h2>{ error }</h2>}
+      {isLoading && <h2>Loading...</h2>}
+      {blogs && blogs.map(blog => {
+        return (
+          <BlogItem blog={blog} key={blog.id} />
+        )
+      })}
     </div>
   );
 }
