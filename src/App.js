@@ -1,13 +1,16 @@
 import "./App.css";
+
+import Container from "react-bootstrap/Container";
+
 import Header from "./components/Header";
 import BlogItems from "./components/BlogItems";
 
 const App = () => {
   return (
-    <div className="App">
+    <Container>
       <Header />
       <BlogItems />
-    </div>
+    </Container>
   );
 };
 
