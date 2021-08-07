@@ -26,7 +26,7 @@ const BlogItems = () => {
   }, []);
 
   return (
-    <div className="blog_items_container">
+    <div className="blog-items-container">
       {error && <h2>{error}</h2>}
       {isLoading && <h2>Loading...</h2>}
       {blogs &&
