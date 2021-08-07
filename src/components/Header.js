@@ -1,8 +1,10 @@
+import Row from "react-bootstrap/Row";
+
 const Header = () => {
   return (
-    <>
-      <h1>Blog Post</h1>
-    </>
+    <Row className="header align-items-stretch">
+      <h1 className="align-self-center">Blog Post</h1>
+    </Row>
   );
 };
 
