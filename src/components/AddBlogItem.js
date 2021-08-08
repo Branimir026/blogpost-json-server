@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const AddBlogItem = () => {
+const AddBlogItem = (props) => {
   const [postTitle, setPostTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [postAuthor, setPostAuthor] = useState("");
@@ -41,7 +41,11 @@ const AddBlogItem = () => {
       }),
     })
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => {
+        console.log(res);
+        props.history.push("/");
+      })
+      .catch((error) => console.log("Request failed: " + error));
 
     setPostTitle("");
     setPostText("");
