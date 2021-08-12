@@ -16,6 +16,11 @@
   font-size: 3.5rem;
 }
 
+.card-title a {
+  text-decoration: none !important;
+  color: darkblue;
+}
+
 .error {
   color: red;
 }
