@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import BlogItem from "./BlogItem";
 
 import Row from "react-bootstrap/Row";
@@ -10,6 +11,10 @@ const BlogItems = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  const fetchBlogs = () => {
     fetch(`http://localhost:8000/posts`)
       .then((res) => {
         if (!res.ok) {
@@ -26,7 +31,7 @@ const BlogItems = () => {
         setError(err.message);
         setIsLoading(false);
       });
-  }, []);
+  };
 
   return (
     <Row className="blog-items-container">
