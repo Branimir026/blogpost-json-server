@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import BlogItem from "./BlogItem";
 
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 const BlogItems = () => {
   const [blogs, setBlogs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -26,14 +29,22 @@ const BlogItems = () => {
   }, []);
 
   return (
-    <div className="blog-items-container">
+    <Row className="blog-items-container">
       {error && <h2 className="error">{error}</h2>}
       {isLoading && <h2>Loading...</h2>}
       {blogs &&
         blogs.map((blog) => {
-          return <BlogItem blog={blog} key={blog.id} />;
+          return (
+            <Col
+              key={blog.id}
+              xs={{ span: 10, offset: 1 }}
+              md={{ span: 4, offset: 0 }}
+            >
+              <BlogItem blog={blog} />
+            </Col>
+          );
         })}
-    </div>
+    </Row>
   );
 };
 
