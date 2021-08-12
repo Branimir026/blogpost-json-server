@@ -27,7 +27,7 @@ const BlogItems = () => {
 
   return (
     <div className="blog-items-container">
-      {error && <h2>{error}</h2>}
+      {error && <h2 className="error">{error}</h2>}
       {isLoading && <h2>Loading...</h2>}
       {blogs &&
         blogs.map((blog) => {
