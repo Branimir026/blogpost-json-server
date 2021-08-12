@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 
 import Card from "react-bootstrap/Card";
 
-import { Link } from "react-router-dom";
-
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -38,9 +36,7 @@ const BlogItemDetails = ({ match }) => {
         {isLoading && <h2>Loading...</h2>}
         <Card className="text-center">
           <Card.Body>
-            <Card.Title>
-              <Link to={`/${blog.id}`}>{blog.title}</Link>
-            </Card.Title>
+            <Card.Title>{blog.title}</Card.Title>
             <Card.Text>{blog.text}</Card.Text>
             <Card.Footer className="text-muted">{blog.author}</Card.Footer>
           </Card.Body>
