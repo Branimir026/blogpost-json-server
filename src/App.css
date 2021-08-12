@@ -16,6 +16,10 @@
   font-size: 3.5rem;
 }
 
+.card {
+  min-height: 215px;
+}
+
 .card-title a {
   text-decoration: none !important;
   color: darkblue;
