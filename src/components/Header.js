@@ -7,12 +7,14 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <Row className="header align-items-center">
-      <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 0 }}>
-        <h1>
-          <Link to="/" className="logo">
-            Blog Post
-          </Link>
-        </h1>
+      <Col
+        xs={{ span: 10, offset: 1 }}
+        md={{ span: 6, offset: 0 }}
+        className="d-flex justify-content-center justify-content-md-start"
+      >
+        <Link to="/" className="logo">
+          Blog Post
+        </Link>
       </Col>
       <Col
         xs={{ span: 4, offset: 4 }}

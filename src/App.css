@@ -5,6 +5,7 @@
 
 .header {
   height: 150px;
+  margin-bottom: 50px;
 }
 
 .logo {
@@ -12,8 +13,16 @@
   text-decoration: none;
 }
 
-.header h1 {
-  font-size: 3.5rem;
+.header .logo {
+  font-size: 4rem;
+}
+
+.btn {
+  font-size: 1.2rem !important;
+}
+
+.blog-items-container {
+  padding: 15px 0px;
 }
 
 .card {
@@ -21,9 +30,12 @@
   margin-bottom: 30px;
 }
 
-.card-title a {
-  text-decoration: none !important;
-  color: darkblue;
+.blogItemTitle {
+  font-size: 1.5rem !important;
+}
+
+.blogItemText {
+  font-size: 1.3rem;
 }
 
 .addItemButtonContainer {

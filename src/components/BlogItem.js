@@ -18,8 +18,10 @@ const BlogItem = ({ blog }) => {
             <Card.Text className="text-muted">{blog.date}</Card.Text>
           </Col>
         </Row>
-        <Card.Title>{blog.title}</Card.Title>
-        <Card.Text>{blog.text.slice(0, 250)}...</Card.Text>
+        <Card.Title className="blogItemTitle">{blog.title}</Card.Title>
+        <Card.Text className="blogItemText">
+          {blog.text.slice(0, 250)}...
+        </Card.Text>
         <Link to={`/${blog.id}`}>
           <Button variant="primary">Read more</Button>
         </Link>

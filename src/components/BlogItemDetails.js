@@ -45,8 +45,8 @@ const BlogItemDetails = ({ match }) => {
                 <Card.Text className="text-muted">{blog.date}</Card.Text>
               </Col>
             </Row>
-            <Card.Title>{blog.title}</Card.Title>
-            <Card.Text>{blog.text}</Card.Text>
+            <Card.Title className="blogItemTitle">{blog.title}</Card.Title>
+            <Card.Text className="blogItemText">{blog.text}</Card.Text>
           </Card.Body>
         </Card>
       </Col>
