@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import BlogItem from "./BlogItem";
+import AddPostButton from "./AddPostButton";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -34,22 +35,25 @@ const BlogItems = () => {
   };
 
   return (
-    <Row className="blog-items-container">
-      {error && <h2 className="error">{error}</h2>}
-      {isLoading && <h2>Loading...</h2>}
-      {blogs &&
-        blogs.map((blog) => {
-          return (
-            <Col
-              key={blog.id}
-              xs={{ span: 10, offset: 1 }}
-              md={{ span: 4, offset: 0 }}
-            >
-              <BlogItem blog={blog} />
-            </Col>
-          );
-        })}
-    </Row>
+    <>
+      <AddPostButton />
+      <Row className="blog-items-container">
+        {error && <h2 className="error">{error}</h2>}
+        {isLoading && <h2>Loading...</h2>}
+        {blogs &&
+          blogs.map((blog) => {
+            return (
+              <Col
+                key={blog.id}
+                xs={{ span: 10, offset: 1 }}
+                md={{ span: 4, offset: 0 }}
+              >
+                <BlogItem blog={blog} />
+              </Col>
+            );
+          })}
+      </Row>
+    </>
   );
 };
 
