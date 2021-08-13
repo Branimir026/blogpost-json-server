@@ -30,12 +30,22 @@
   margin-bottom: 30px;
 }
 
+.postImage {
+  max-height: 232px;
+}
+
 .blogItemTitle {
   font-size: 1.5rem !important;
+  margin: 10px 0px !important;
 }
 
 .blogItemText {
   font-size: 1.3rem;
+  margin: 10px 0px;
+}
+
+.postButton {
+  margin-top: 20px !important;
 }
 
 .addItemButtonContainer {

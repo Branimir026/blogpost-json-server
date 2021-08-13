@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const BlogItem = ({ blog }) => {
   return (
     <Card className="text-center">
-      <Card.Img variant="top" src={blog.image} />
+      <Card.Img variant="top" src={blog.image} className="postImage" />
       <Card.Body>
         <Row>
           <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 0 }}>
@@ -22,9 +22,11 @@ const BlogItem = ({ blog }) => {
         <Card.Text className="blogItemText">
           {blog.text.slice(0, 250)}...
         </Card.Text>
-        <Link to={`/${blog.id}`}>
-          <Button variant="primary">Read more</Button>
-        </Link>
+        <Row className="postButton">
+          <Link to={`/${blog.id}`}>
+            <Button variant="primary">Read more</Button>
+          </Link>
+        </Row>
       </Card.Body>
     </Card>
   );
