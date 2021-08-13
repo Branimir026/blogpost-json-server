@@ -5,7 +5,6 @@
 
 .header {
   height: 150px;
-  margin-bottom: 50px;
 }
 
 .logo {
@@ -51,6 +50,7 @@
 .addItemButtonContainer {
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .error {
