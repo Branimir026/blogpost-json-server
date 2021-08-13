@@ -35,10 +35,18 @@ const BlogItemDetails = ({ match }) => {
         {error && <h2 className="error">{error}</h2>}
         {isLoading && <h2>Loading...</h2>}
         <Card className="text-center">
+          <Card.Img variant="top" src={blog.image} className="blogPostImage" />
           <Card.Body>
+            <Row>
+              <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 0 }}>
+                <Card.Text className="text-muted">{blog.author}</Card.Text>
+              </Col>
+              <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 0 }}>
+                <Card.Text className="text-muted">13.8.2021</Card.Text>
+              </Col>
+            </Row>
             <Card.Title>{blog.title}</Card.Title>
             <Card.Text>{blog.text}</Card.Text>
-            <Card.Footer className="text-muted">{blog.author}</Card.Footer>
           </Card.Body>
         </Card>
       </Col>
