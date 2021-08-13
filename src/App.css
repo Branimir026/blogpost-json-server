@@ -17,12 +17,18 @@
 }
 
 .card {
-  min-height: 215px;
+  min-height: 600px;
+  margin-bottom: 30px;
 }
 
 .card-title a {
   text-decoration: none !important;
   color: darkblue;
+}
+
+.addItemButtonContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .error {
