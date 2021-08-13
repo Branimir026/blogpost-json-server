@@ -42,7 +42,7 @@ const BlogItemDetails = ({ match }) => {
                 <Card.Text className="text-muted">{blog.author}</Card.Text>
               </Col>
               <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 0 }}>
-                <Card.Text className="text-muted">13.8.2021</Card.Text>
+                <Card.Text className="text-muted">{blog.date}</Card.Text>
               </Col>
             </Row>
             <Card.Title>{blog.title}</Card.Title>
