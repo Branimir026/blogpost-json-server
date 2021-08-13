@@ -9,6 +9,7 @@ const AddBlogItem = (props) => {
   const [postTitle, setPostTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [postAuthor, setPostAuthor] = useState("");
+  const [postImage, setPostImage] = useState("");
 
   const postTitleHandler = (e) => {
     e.preventDefault();
@@ -24,6 +25,10 @@ const AddBlogItem = (props) => {
     e.preventDefault();
     setPostAuthor(e.target.value);
   };
+  const postImageHandler = (e) => {
+    e.preventDefault();
+    setPostImage(e.target.value);
+  };
 
   const handleSubmitPost = (e) => {
     e.preventDefault();
@@ -38,6 +43,8 @@ const AddBlogItem = (props) => {
         title: postTitle,
         text: postText,
         author: postAuthor,
+        image: postImage,
+        date: convertTime(),
       }),
     })
       .then((res) => res.json())
@@ -50,6 +57,23 @@ const AddBlogItem = (props) => {
     setPostTitle("");
     setPostText("");
     setPostAuthor("");
+    setPostImage("");
+  };
+
+  const convertTime = () => {
+    const dateObj = new Date();
+
+    let day = dateObj.getUTCDate();
+    let month = dateObj.getUTCMonth();
+    let year = dateObj.getUTCFullYear();
+
+    let stringDay = day.toString().padStart(2, "0");
+    let stringMonth = month.toString().padStart(2, "0");
+    let stringYear = year.toString();
+
+    let formattedTime = stringDay + "." + stringMonth + "." + stringYear + ".";
+
+    return formattedTime;
   };
 
   return (
@@ -82,6 +106,16 @@ const AddBlogItem = (props) => {
           placeholder="Author's name"
           value={postAuthor}
           onChange={postAuthorHandler}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="image-input">
+        <Form.Label>Image</Form.Label>
+        <Form.Control
+          required
+          type="text"
+          placeholder="https://example.com/something/abcd.jpg"
+          value={postImage}
+          onChange={postImageHandler}
         />
       </Form.Group>
       <Button variant="primary" type="submit">
